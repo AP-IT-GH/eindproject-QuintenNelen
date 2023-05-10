@@ -55,11 +55,17 @@ public class HitWall : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    /*    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("iWall"))
+        speed = speed * -1;
+    }*/
+
+    // void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("iWall"))
         {
-            if (collision.gameObject.name == "wallA")
+            if (col.gameObject.name == "wallA")
             {
                 // Agent A hits into wall or agent B hit a winner
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit)
@@ -72,7 +78,9 @@ public class HitWall : MonoBehaviour
                     AgentAWins();
                 }
             }
-            else if (collision.gameObject.name == "wallB")
+
+
+            else if (col.gameObject.name == "wallB")
             {
                 // Agent B hits into wall or agent A hit a winner
                 if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit)
@@ -85,7 +93,64 @@ public class HitWall : MonoBehaviour
                     AgentBWins();
                 }
             }
-            else if (collision.gameObject.name == "floorA")
+
+            else if (col.gameObject.name == "LeftSideWall")
+            {
+                // Agent B hits into wall 
+                if (lastAgentHit == 1)
+                {
+                    AgentAWins();
+                }
+                // Agent A hits long
+                else
+                {
+                    AgentBWins();
+                }
+            }
+
+            else if (col.gameObject.name == "LeftSideWall")
+            {
+                // Agent A hits into wall 
+                if (lastAgentHit == 0)
+                {
+                    AgentBWins();
+                }
+                // Agent B hits long
+                else
+                {
+                    AgentAWins();
+                }
+            }
+
+            else if (col.gameObject.name == "RightSideWall")
+            {
+                // Agent B hits into wall 
+                if (lastAgentHit == 1)
+                {
+                    AgentAWins();
+                }
+                // Agent A hits long
+                else
+                {
+                    AgentBWins();
+                }
+            }
+
+            else if (col.gameObject.name == "RightSideWall")
+            {
+                // Agent A hits into wall 
+                if (lastAgentHit == 0)
+                {
+                    AgentBWins();
+                }
+                // Agent B hits long
+                else
+                {
+                    AgentAWins();
+                }
+            }
+
+            else if (col.gameObject.name == "floorA")
             {
                 // Agent A hits into floor, double bounce or service
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit || lastFloorHit == FloorHit.Service)
@@ -102,7 +167,7 @@ public class HitWall : MonoBehaviour
                     }
                 }
             }
-            else if (collision.gameObject.name == "floorB")
+            else if (col.gameObject.name == "floorB")
             {
                 // Agent B hits into floor, double bounce or service
                 if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit || lastFloorHit == FloorHit.Service)
@@ -119,7 +184,7 @@ public class HitWall : MonoBehaviour
                     }
                 }
             }
-            else if (collision.gameObject.name == "net" && !net)
+            else if (col.gameObject.name == "net" && !net)
             {
                 if (lastAgentHit == 0)
                 {
@@ -130,8 +195,10 @@ public class HitWall : MonoBehaviour
                     AgentAWins();
                 }
             }
-        }
-        else if (collision.gameObject.name == "AgentA")
+        } }
+
+void OnCollisionEnter(Collision col) { 
+        if (col.gameObject.name == "AgentA")
         {
             // Agent A double hit
             if (lastAgentHit == 0)
@@ -150,7 +217,7 @@ public class HitWall : MonoBehaviour
                 lastFloorHit = FloorHit.FloorHitUnset;
             }
         }
-        else if (collision.gameObject.name == "AgentB")
+        else if (col.gameObject.name == "AgentB")
         {
             // Agent B double hit
             if (lastAgentHit == 1)

@@ -55,11 +55,16 @@ public class TennisAgent : Agent
         sensor.AddObservation(transform.position.y - myArea.transform.position.y);
         sensor.AddObservation(m_InvertMult * m_AgentRb.velocity.x);
         sensor.AddObservation(m_AgentRb.velocity.y);
+        //new
+        sensor.AddObservation(transform.position.z - myArea.transform.position.z);
 
         sensor.AddObservation(m_InvertMult * (ball.transform.position.x - myArea.transform.position.x));
         sensor.AddObservation(ball.transform.position.y - myArea.transform.position.y);
         sensor.AddObservation(m_InvertMult * m_BallRb.velocity.x);
         sensor.AddObservation(m_BallRb.velocity.y);
+        //new
+        sensor.AddObservation(transform.position.z - myArea.transform.position.z);
+
 
         sensor.AddObservation(m_InvertMult * gameObject.transform.rotation.z);
     }
@@ -70,13 +75,16 @@ public class TennisAgent : Agent
         var moveX = Mathf.Clamp(vectorAction[0], -1f, 1f) * m_InvertMult;
         var moveY = Mathf.Clamp(vectorAction[1], -1f, 1f);
         var rotate = Mathf.Clamp(vectorAction[2], -1f, 1f) * m_InvertMult;
+        var moveZ = Mathf.Clamp(vectorAction[3], -1f, 1f) * m_InvertMult;
 
         if (moveY > 0.5 && transform.position.y - transform.parent.transform.position.y < -1.5f)
         {
-            m_AgentRb.velocity = new Vector3(m_AgentRb.velocity.x, 7f, 0f);
+            m_AgentRb.velocity = new Vector3(m_AgentRb.velocity.x, 7f, m_AgentRb.velocity.z);
         }
 
-        m_AgentRb.velocity = new Vector3(moveX * 30f, m_AgentRb.velocity.y, 0f);
+     
+        m_AgentRb.velocity = new Vector3(moveX * 15f, m_AgentRb.velocity.y, moveZ * 15f);
+        
 
         m_AgentRb.transform.rotation = Quaternion.Euler(0f, -180f, 55f * rotate + m_InvertMult * 90f);
 
@@ -91,13 +99,18 @@ public class TennisAgent : Agent
         m_TextComponent.text = score.ToString();
     }
 
+
+
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var continuousActionsOut = actionsOut.ContinuousActions;
         continuousActionsOut[0] = Input.GetAxis("Horizontal");    // Racket Movement
         continuousActionsOut[1] = Input.GetKey(KeyCode.Space) ? 1f : 0f;   // Racket Jumping
         continuousActionsOut[2] = Input.GetAxis("Vertical");   // Racket Rotation
+        continuousActionsOut[3] = Input.GetKey(KeyCode.G) ? -1f : Input.GetKey(KeyCode.B) ? 1f : 0f; //z actions
+
     }
+
 
 
     public override void OnEpisodeBegin()
@@ -109,6 +122,7 @@ public class TennisAgent : Agent
 
         SetResetParameters();
     }
+
 
     public void SetRacket()
     {
