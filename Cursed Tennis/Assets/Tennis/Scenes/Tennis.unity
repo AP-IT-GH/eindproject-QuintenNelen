@@ -1027,6 +1027,50 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.3
       objectReference: {fileID: 0}
+    - target: {fileID: 54459681652844648, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 54551619567459642, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_Constraints
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 54815576193067388, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 65593217352137886, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65593217352137886, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65640199598103162, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65640199598103162, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65691977659257876, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65739890147049780, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176423636690854, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176423636690854, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BehaviorType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114176423636690854, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: m_InferenceDevice
       value: 0
@@ -1035,6 +1079,30 @@ PrefabInstance:
       propertyPath: m_ObservableAttributeHandling
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114176423636690854, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176423636690854, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176423636690854, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176423636690854, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BehaviorType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: m_InferenceDevice
       value: 0
@@ -1042,10 +1110,42 @@ PrefabInstance:
     - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: m_ObservableAttributeHandling
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2649765955842143692, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: invertX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691712092620927371, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131164986620364559, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306241446767991223, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_TagString
+      value: iWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510388194016575876, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_TagString
+      value: iWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
