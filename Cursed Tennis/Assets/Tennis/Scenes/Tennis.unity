@@ -626,8 +626,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSpaceType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -635,11 +643,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114399072728845634, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2649765955842143692, guid: 812997c7bc2544b6f927ff684c03450f, type: 3}
       propertyPath: invertX
