@@ -73,7 +73,7 @@ namespace MLAgentsExamples
             }
         }
 
-        void OnEnable()
+        protected override void OnEnable()
         {
             m_Agent = GetComponent<Agent>();
 

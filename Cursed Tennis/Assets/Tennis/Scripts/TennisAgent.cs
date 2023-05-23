@@ -49,6 +49,16 @@ public class TennisAgent : Agent
         SetResetParameters();
     }
 
+    public override void OnEpisodeBegin()
+    {
+        m_InvertMult = invertX ? -1f : 1f;
+
+        transform.position = new Vector3(-m_InvertMult * Random.Range(6f, 8f), -1.5f, -1.8f) + transform.parent.transform.position;
+        m_AgentRb.velocity = new Vector3(0f, 0f, 0f);
+
+        SetResetParameters();
+    }
+
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(m_InvertMult * (transform.position.x - myArea.transform.position.x));
@@ -67,6 +77,8 @@ public class TennisAgent : Agent
 
 
         sensor.AddObservation(m_InvertMult * gameObject.transform.rotation.z);
+
+      
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -79,11 +91,11 @@ public class TennisAgent : Agent
 
         if (moveY > 0.5 && transform.position.y - transform.parent.transform.position.y < -1.5f)
         {
-            m_AgentRb.velocity = new Vector3(m_AgentRb.velocity.x, 7f, m_AgentRb.velocity.z);
+            m_AgentRb.velocity = new Vector3(m_AgentRb.velocity.x, 4f, m_AgentRb.velocity.z);
         }
 
      
-        m_AgentRb.velocity = new Vector3(moveX * 15f, m_AgentRb.velocity.y, moveZ * 15f);
+        m_AgentRb.velocity = new Vector3(moveX * 8f, m_AgentRb.velocity.y, moveZ * 8f);
         
 
         m_AgentRb.transform.rotation = Quaternion.Euler(0f, -180f, 55f * rotate + m_InvertMult * 90f);
@@ -107,20 +119,8 @@ public class TennisAgent : Agent
         continuousActionsOut[0] = Input.GetAxis("Horizontal");    // Racket Movement
         continuousActionsOut[1] = Input.GetKey(KeyCode.Space) ? 1f : 0f;   // Racket Jumping
         continuousActionsOut[2] = Input.GetAxis("Vertical");   // Racket Rotation
-        continuousActionsOut[3] = Input.GetKey(KeyCode.G) ? -1f : Input.GetKey(KeyCode.B) ? 1f : 0f; //z actions
-
-    }
-
-
-
-    public override void OnEpisodeBegin()
-    {
-        m_InvertMult = invertX ? -1f : 1f;
-
-        transform.position = new Vector3(-m_InvertMult * Random.Range(6f, 8f), -1.5f, -1.8f) + transform.parent.transform.position;
-        m_AgentRb.velocity = new Vector3(0f, 0f, 0f);
-
-        SetResetParameters();
+        float v = Input.GetKey(KeyCode.G) ? -1f : Input.GetKey(KeyCode.B) ? 1f : 0f;
+        continuousActionsOut[3] = v; //z actions
     }
 
 

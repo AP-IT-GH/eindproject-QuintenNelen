@@ -1,0 +1,48 @@
+{
+    "Tennis": {
+        "checkpoints": [
+            {
+                "steps": 99995,
+                "file_path": "results\\tennis4\\Tennis\\Tennis-99995.onnx",
+                "reward": 0.025027203482045703,
+                "creation_time": 1684676645.1731443,
+                "auxillary_file_paths": [
+                    "results\\tennis4\\Tennis\\Tennis-99995.pt"
+                ]
+            },
+            {
+                "steps": 199992,
+                "file_path": "results\\tennis4\\Tennis\\Tennis-199992.onnx",
+                "reward": 0.028423772609819122,
+                "creation_time": 1684677406.9290419,
+                "auxillary_file_paths": [
+                    "results\\tennis4\\Tennis\\Tennis-199992.pt"
+                ]
+            },
+            {
+                "steps": 200010,
+                "file_path": "results\\tennis4\\Tennis\\Tennis-200010.onnx",
+                "reward": 0.02967741935483871,
+                "creation_time": 1684677407.1543667,
+                "auxillary_file_paths": [
+                    "results\\tennis4\\Tennis\\Tennis-200010.pt"
+                ]
+            }
+        ],
+        "elo": 1216.020341827032,
+        "final_checkpoint": {
+            "steps": 200010,
+            "file_path": "results\\tennis4\\Tennis.onnx",
+            "reward": 0.02967741935483871,
+            "creation_time": 1684677407.1543667,
+            "auxillary_file_paths": [
+                "results\\tennis4\\Tennis\\Tennis-200010.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

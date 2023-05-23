@@ -1,0 +1,30 @@
+{
+    "Tennis": {
+        "elo": 1203.5426751854227,
+        "checkpoints": [
+            {
+                "steps": 149750,
+                "file_path": "results\\tennis2\\Tennis\\Tennis-149750.onnx",
+                "reward": 0.15789473684210525,
+                "creation_time": 1684674223.1005714,
+                "auxillary_file_paths": [
+                    "results\\tennis2\\Tennis\\Tennis-149750.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 149750,
+            "file_path": "results\\tennis2\\Tennis.onnx",
+            "reward": 0.15789473684210525,
+            "creation_time": 1684674223.1005714,
+            "auxillary_file_paths": [
+                "results\\tennis2\\Tennis\\Tennis-149750.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

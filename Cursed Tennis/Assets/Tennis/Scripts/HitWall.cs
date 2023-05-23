@@ -39,8 +39,8 @@ public class HitWall : MonoBehaviour
     
     void AgentAWins()
     {
-        m_AgentA.SetReward(1);
-        m_AgentB.SetReward(-1);
+        m_AgentA.SetReward(1f);
+        m_AgentB.SetReward(-1f);
         m_AgentA.score += 1;
         Reset();
 
@@ -48,8 +48,8 @@ public class HitWall : MonoBehaviour
 
     void AgentBWins()
     {
-        m_AgentA.SetReward(-1);
-        m_AgentB.SetReward(1);
+        m_AgentA.SetReward(-1f);
+        m_AgentB.SetReward(1f);
         m_AgentB.score += 1;
         Reset();
 
@@ -207,6 +207,11 @@ void OnCollisionEnter(Collision col) {
             }
             else
             {
+
+                // Agent A hits the ball successfully
+                m_AgentA.SetReward(0.1f); 
+                                          
+                                          
                 //agent can return serve in the air
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
@@ -226,6 +231,10 @@ void OnCollisionEnter(Collision col) {
             }
             else
             {
+
+                // Agent B hits the ball successfully
+            m_AgentB.SetReward(0.1f); // Assign a positive reward to the agent
+            // Rest of the code...
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
                     net = true;

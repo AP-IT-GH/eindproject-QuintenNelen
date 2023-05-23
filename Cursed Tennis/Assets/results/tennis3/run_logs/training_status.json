@@ -1,0 +1,57 @@
+{
+    "Tennis": {
+        "checkpoints": [
+            {
+                "steps": 19999,
+                "file_path": "results\\tennis3\\Tennis\\Tennis-19999.onnx",
+                "reward": 0.021359223300970873,
+                "creation_time": 1684675121.982977,
+                "auxillary_file_paths": [
+                    "results\\tennis3\\Tennis\\Tennis-19999.pt"
+                ]
+            },
+            {
+                "steps": 39989,
+                "file_path": "results\\tennis3\\Tennis\\Tennis-39989.onnx",
+                "reward": -0.006951340615690168,
+                "creation_time": 1684675275.413537,
+                "auxillary_file_paths": [
+                    "results\\tennis3\\Tennis\\Tennis-39989.pt"
+                ]
+            },
+            {
+                "steps": 59985,
+                "file_path": "results\\tennis3\\Tennis\\Tennis-59985.onnx",
+                "reward": -0.017616580310880828,
+                "creation_time": 1684675427.1615508,
+                "auxillary_file_paths": [
+                    "results\\tennis3\\Tennis\\Tennis-59985.pt"
+                ]
+            },
+            {
+                "steps": 76630,
+                "file_path": "results\\tennis3\\Tennis\\Tennis-76630.onnx",
+                "reward": 0.025032938076416336,
+                "creation_time": 1684675617.4168706,
+                "auxillary_file_paths": [
+                    "results\\tennis3\\Tennis\\Tennis-76630.pt"
+                ]
+            }
+        ],
+        "elo": 1192.670830546489,
+        "final_checkpoint": {
+            "steps": 76630,
+            "file_path": "results\\tennis3\\Tennis.onnx",
+            "reward": 0.025032938076416336,
+            "creation_time": 1684675617.4168706,
+            "auxillary_file_paths": [
+                "results\\tennis3\\Tennis\\Tennis-76630.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
