@@ -12,6 +12,7 @@ public class TennisAgent : Agent
 {
     [Header("Specific to Tennis")]
     public GameObject ball;
+    public Transform Target;
     public bool invertX;
     public int score;
     public GameObject myArea;
@@ -78,7 +79,12 @@ public class TennisAgent : Agent
 
         sensor.AddObservation(m_InvertMult * gameObject.transform.rotation.z);
 
-      
+        sensor.AddObservation(this.transform.localPosition);
+        sensor.AddObservation(this.transform.localRotation);
+        sensor.AddObservation(Target.transform.localPosition);
+
+
+
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)

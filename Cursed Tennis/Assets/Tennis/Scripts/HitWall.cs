@@ -209,7 +209,7 @@ void OnCollisionEnter(Collision col) {
             {
 
                 // Agent A hits the ball successfully
-                m_AgentA.SetReward(0.1f); 
+                m_AgentA.AddReward(0.3f); 
                                           
                                           
                 //agent can return serve in the air
@@ -233,8 +233,8 @@ void OnCollisionEnter(Collision col) {
             {
 
                 // Agent B hits the ball successfully
-            m_AgentB.SetReward(0.1f); // Assign a positive reward to the agent
-            // Rest of the code...
+                 m_AgentB.AddReward(0.3f); // Assign a positive reward to the agent
+                                        // Rest of the code...
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
                     net = true;
