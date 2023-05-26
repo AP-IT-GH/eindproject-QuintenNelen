@@ -7,12 +7,12 @@ public class HitWall : MonoBehaviour
     public bool net;
 
     public enum FloorHit
-        {
-            Service,
-            FloorHitUnset,
-            FloorAHit,
-            FloorBHit
-        }
+    {
+        Service,
+        FloorHitUnset,
+        FloorAHit,
+        FloorBHit
+    }
 
     public FloorHit lastFloorHit;
 
@@ -197,7 +197,7 @@ public class HitWall : MonoBehaviour
             }
         } }
 
-void OnCollisionEnter(Collision col) { 
+    void OnCollisionEnter(Collision col) { 
         if (col.gameObject.name == "AgentA")
         {
             // Agent A double hit
@@ -207,10 +207,8 @@ void OnCollisionEnter(Collision col) {
             }
             else
             {
-
                 // Agent A hits the ball successfully
                 m_AgentA.AddReward(0.3f); 
-                                          
                                           
                 //agent can return serve in the air
                 if (lastFloorHit != FloorHit.Service && !net)
@@ -231,10 +229,10 @@ void OnCollisionEnter(Collision col) {
             }
             else
             {
-
                 // Agent B hits the ball successfully
-                 m_AgentB.AddReward(0.3f); // Assign a positive reward to the agent
-                                        // Rest of the code...
+                 m_AgentB.AddReward(0.3f);
+                
+                // Rest of the code...
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
                     net = true;
