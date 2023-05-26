@@ -43,7 +43,6 @@ public class HitWall : MonoBehaviour
         m_AgentB.SetReward(-1f);
         m_AgentA.score += 1;
         Reset();
-
     }
 
     void AgentBWins()
@@ -52,15 +51,8 @@ public class HitWall : MonoBehaviour
         m_AgentB.SetReward(1f);
         m_AgentB.score += 1;
         Reset();
-
     }
 
-    /*    private void OnTriggerEnter(Collider other)
-    {
-        speed = speed * -1;
-    }*/
-
-    // void OnCollisionEnter(Collision collision)
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("iWall"))
@@ -195,9 +187,20 @@ public class HitWall : MonoBehaviour
                     AgentAWins();
                 }
             }
-        } }
 
-    void OnCollisionEnter(Collision col) { 
+            if (col.gameObject.name == "over" && lastAgentHit == 0)
+            {
+                m_AgentA.AddReward(0.5f);
+            }
+            else if (col.gameObject.name == "over" && lastAgentHit == 1)
+            {
+                m_AgentB.AddReward(0.5f);
+            }
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
         if (col.gameObject.name == "AgentA")
         {
             // Agent A double hit
@@ -208,8 +211,8 @@ public class HitWall : MonoBehaviour
             else
             {
                 // Agent A hits the ball successfully
-                m_AgentA.AddReward(0.3f); 
-                                          
+                //m_AgentA.AddReward(0.3f);
+
                 //agent can return serve in the air
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
@@ -230,8 +233,8 @@ public class HitWall : MonoBehaviour
             else
             {
                 // Agent B hits the ball successfully
-                 m_AgentB.AddReward(0.3f);
-                
+                //m_AgentB.AddReward(0.3f);
+
                 // Rest of the code...
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
