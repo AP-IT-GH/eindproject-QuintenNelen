@@ -1,6 +1,6 @@
 behaviors:
   Tennis:
-    trainer_type: poca
+    trainer_type: ppo
     hyperparameters:
       batch_size: 2048
       buffer_size: 20480
@@ -22,9 +22,15 @@ behaviors:
       extrinsic:
         gamma: 0.995
         strength: 1.0
+      gail: 
+        strength: 0.8
+        demo_path: demo/Demo4.demo
+    behavioral_cloning:
+        strength: 0.8
+        demo_path: demo/Demo4.demo
     keep_checkpoints: 1
     checkpoint_interval: 100000
-    max_steps: 200000
+    max_steps: 1000000
     time_horizon: 1000
     summary_freq: 5000
     threaded: false
