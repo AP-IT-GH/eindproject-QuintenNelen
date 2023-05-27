@@ -147,6 +147,15 @@ public class HitWall : MonoBehaviour
                     AgentAWins();
                 }
             }
+
+            if (col.gameObject.name == "over" && lastAgentHit == 0)
+            {
+                m_AgentA.AddReward(0.5f);
+            }
+            else if (col.gameObject.name == "over" && lastAgentHit == 1)
+            {
+                m_AgentB.AddReward(0.5f);
+            }
         }
     }
 
@@ -162,6 +171,10 @@ public class HitWall : MonoBehaviour
             {
                 m_AgentA.AddReward(0.1f);
 
+                // Agent A hits the ball successfully
+                //m_AgentA.AddReward(0.3f);
+
+                //agent can return serve in the air
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
                     net = true;
@@ -181,6 +194,10 @@ public class HitWall : MonoBehaviour
             {
                 m_AgentB.AddReward(0.1f);
 
+                // Agent B hits the ball successfully
+                //m_AgentB.AddReward(0.3f);
+
+                // Rest of the code...
                 if (lastFloorHit != FloorHit.Service && !net)
                 {
                     net = true;
