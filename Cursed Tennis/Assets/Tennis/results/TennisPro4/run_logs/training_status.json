@@ -1,0 +1,30 @@
+{
+    "Tennis": {
+        "checkpoints": [
+            {
+                "steps": 4066372,
+                "file_path": "results\\TennisPro4\\Tennis\\Tennis-4066372.onnx",
+                "reward": 0.9733333443601926,
+                "creation_time": 1685459961.2991028,
+                "auxillary_file_paths": [
+                    "results\\TennisPro4\\Tennis\\Tennis-4066372.pt"
+                ]
+            }
+        ],
+        "elo": 1199.156795945076,
+        "final_checkpoint": {
+            "steps": 4066372,
+            "file_path": "results\\TennisPro4\\Tennis.onnx",
+            "reward": 0.9733333443601926,
+            "creation_time": 1685459961.2991028,
+            "auxillary_file_paths": [
+                "results\\TennisPro4\\Tennis\\Tennis-4066372.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "Tennis": {
+        "checkpoints": [
+            {
+                "steps": 198632,
+                "file_path": "results\\SuperHumanTennis\\Tennis\\Tennis-198632.onnx",
+                "reward": -0.1860795435919003,
+                "creation_time": 1685301799.552616,
+                "auxillary_file_paths": [
+                    "results\\SuperHumanTennis\\Tennis\\Tennis-198632.pt"
+                ]
+            }
+        ],
+        "elo": 1200.7324195241522,
+        "final_checkpoint": {
+            "steps": 198632,
+            "file_path": "results\\SuperHumanTennis\\Tennis.onnx",
+            "reward": -0.1860795435919003,
+            "creation_time": 1685301799.552616,
+            "auxillary_file_paths": [
+                "results\\SuperHumanTennis\\Tennis\\Tennis-198632.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

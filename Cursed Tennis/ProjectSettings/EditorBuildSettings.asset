@@ -11,4 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test-Jordy.unity
     guid: 6b2554defa30d514492ac3ee99580d18
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b565c2e044b280a4dadbba442aef3f7f, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a1fbf1ec6be7ede4e84818767569024d, type: 2}
