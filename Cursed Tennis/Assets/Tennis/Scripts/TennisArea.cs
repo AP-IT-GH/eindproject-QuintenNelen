@@ -16,20 +16,24 @@ public class TennisArea : MonoBehaviour
 
     public void MatchReset()
     {
-        var ballOut = Random.Range(6f, 8f);
+        var agentAX = agentA.transform.position.x;
+        var agentBX = agentB.transform.position.x;
         var flip = Random.Range(0, 2);
+
         if (flip == 0)
         {
-            ball.transform.position = new Vector3(-ballOut, 6f, 0f) + transform.position;
+            ball.transform.position = new Vector3(agentAX, 1f, 0f) + transform.position;
         }
         else
         {
-            ball.transform.position = new Vector3(ballOut, 6f, 0f) + transform.position;
+            ball.transform.position = new Vector3(agentBX, 1f, 0f) + transform.position;
         }
-        m_BallRb.velocity = new Vector3(0f, 0f, 0f);
-        ball.transform.localScale = new Vector3(.5f, .5f, .5f);
+
+        m_BallRb.velocity = Vector3.zero;
+        ball.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         ball.GetComponent<HitWall>().lastAgentHit = -1;
     }
+
 
     void FixedUpdate()
     {
