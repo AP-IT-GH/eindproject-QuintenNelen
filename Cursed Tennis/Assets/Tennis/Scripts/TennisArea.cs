@@ -16,17 +16,17 @@ public class TennisArea : MonoBehaviour
 
     public void MatchReset()
     {
-        var agentAX = agentA.transform.position.x;
-        var agentBX = agentB.transform.position.x;
+        var racketAX = agentA.transform.position.x;
+        var racketBX = agentB.transform.position.x;
         var flip = Random.Range(0, 2);
 
         if (flip == 0)
         {
-            ball.transform.position = new Vector3(agentAX, 1f, 0f) + transform.position;
+            ball.transform.position = new Vector3(racketAX, 0f, 0f) + transform.position;
         }
         else
         {
-            ball.transform.position = new Vector3(agentBX, 1f, 0f) + transform.position;
+            ball.transform.position = new Vector3(racketBX, 0f, 0f) + transform.position;
         }
 
         m_BallRb.velocity = Vector3.zero;
