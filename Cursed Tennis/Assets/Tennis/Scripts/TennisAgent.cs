@@ -54,8 +54,8 @@ public class TennisAgent : Agent
     {
         m_InvertMult = invertX ? -1f : 1f;
 
-        transform.position = new Vector3(-m_InvertMult * Random.Range(6f, 8f), -1.5f, -1.8f) + transform.parent.transform.position;
-        m_AgentRb.velocity = new Vector3(0f, 0f, 0f);
+        transform.position = new Vector3(21.64f, -6.52f, -1.8f); // Set the desired position
+        m_AgentRb.velocity = Vector3.zero; // Reset velocity
 
         SetResetParameters();
     }
