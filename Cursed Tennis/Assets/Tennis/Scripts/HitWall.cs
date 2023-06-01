@@ -41,7 +41,6 @@ public class HitWall : MonoBehaviour
         m_AgentA.AddReward(1f);
         m_AgentB.AddReward(-1f);
         m_AgentA.score += 1;
-        Debug.Log(m_AgentA.score + " agent A");
         Reset();
     }
 
@@ -50,7 +49,6 @@ public class HitWall : MonoBehaviour
         m_AgentA.AddReward(-1f);
         m_AgentB.AddReward(1f);
         m_AgentB.score += 1;
-        Debug.Log(m_AgentB.score + " agent B");
         Reset();
     }
 
@@ -80,9 +78,9 @@ public class HitWall : MonoBehaviour
                     AgentBWins();
                 }
             }
-            else if (col.gameObject.name == "LeftSideWall")
+            else if (col.gameObject.name == "LeftSideWall" || col.gameObject.name == "RightSideWall")
             {
-                if (lastAgentHit == 1)
+                if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit)
                 {
                     AgentAWins();
                 }
@@ -91,28 +89,28 @@ public class HitWall : MonoBehaviour
                     AgentBWins();
                 }
             }
-            else if (col.gameObject.name == "RightSideWall")
+            else if (col.gameObject.name == "RightSideWall" || col.gameObject.name == "LeftSideWall")
             {
-                if (lastAgentHit == 1)
-                {
-                    AgentAWins();
-                }
-                else
+                if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit)
                 {
                     AgentBWins();
+                }
+                else
+                {  
+                    AgentAWins();
                 }
             }
             else if (col.gameObject.name == "floorA")
             {
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit || lastFloorHit == FloorHit.Service)
                 {
-                    m_AgentA.AddReward(-0.5f);
+ 
                     AgentBWins();
                 }
                 else
                 {
                     lastFloorHit = FloorHit.FloorAHit;
-                    m_AgentA.AddReward(1f);
+
                     if (!net)
                     {
                         net = true;
@@ -123,13 +121,13 @@ public class HitWall : MonoBehaviour
             {
                 if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit || lastFloorHit == FloorHit.Service)
                 {
-                    m_AgentB.AddReward(-0.5f);
+
                     AgentAWins();
                 }
                 else
                 {
                     lastFloorHit = FloorHit.FloorBHit;
-                    m_AgentB.AddReward(1f);
+
                     if (!net)
                     {
                         net = true;
@@ -150,11 +148,11 @@ public class HitWall : MonoBehaviour
 
             if (col.gameObject.name == "over" && lastAgentHit == 0)
             {
-                m_AgentA.AddReward(0.5f);
+                m_AgentA.AddReward(0.2f);
             }
             else if (col.gameObject.name == "over" && lastAgentHit == 1)
             {
-                m_AgentB.AddReward(0.5f);
+                m_AgentB.AddReward(0.2f);
             }
         }
     }

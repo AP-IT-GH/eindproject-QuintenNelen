@@ -14,7 +14,7 @@ public class TennisArea : MonoBehaviour
         MatchReset();
     }
 
-    public void MatchReset()
+    /*public void MatchReset()
     {
         var agentAX = agentA.transform.position.x;
         var agentBX = agentB.transform.position.x;
@@ -32,12 +32,35 @@ public class TennisArea : MonoBehaviour
         m_BallRb.velocity = Vector3.zero;
         ball.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         ball.GetComponent<HitWall>().lastAgentHit = -1;
-    }
+    }*/
 
-
-    void FixedUpdate()
+    public void MatchReset()
     {
-        var rgV = m_BallRb.velocity;
-        m_BallRb.velocity = new Vector3(Mathf.Clamp(rgV.x, -9f, 9f), Mathf.Clamp(rgV.y, -9f, 9f), rgV.z);
+        // Reset ball position
+        var agentAX = agentA.transform.position.x;
+        var agentBX = agentB.transform.position.x;
+        var flip = Random.Range(0, 2);
+        var ballX = flip == 0 ? agentAX - 0.5f : agentBX - 0.5f; // Adjust the value to determine the distance between the ball and the agent
+        var ballY = 3.5f;
+        var ballZ = 0f;
+        ball.transform.position = new Vector3(ballX, ballY, ballZ) + transform.position;
+
+        // Reset ball velocity
+        m_BallRb.velocity = Vector3.zero;
+
+        // Reset ball scale
+        var ballScale = new Vector3(0.5f, 0.5f, 0.5f);
+        ball.transform.localScale = ballScale;
+
+        // Reset last agent hit
+        ball.GetComponent<HitWall>().lastAgentHit = -1;
+
+        // Reset floor hit
+        ball.GetComponent<HitWall>().lastFloorHit = HitWall.FloorHit.Service;
     }
+
+
 }
+
+
+

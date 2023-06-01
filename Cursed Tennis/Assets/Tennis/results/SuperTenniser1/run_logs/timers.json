@@ -1,0 +1,49 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1685626923",
+        "python_version": "3.9.16 (main, Mar  8 2023, 10:39:24) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "D:\\jordy\\Games\\Unity_Games\\Anaconda_map\\envs\\MLAgents_venv\\Scripts\\mlagents-learn config/tennis.yaml --run-id=SuperTenniser1 --force",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1685626931"
+    },
+    "total": 8.5213538,
+    "count": 1,
+    "self": 0.007223400000000879,
+    "children": {
+        "run_training.setup": {
+            "total": 0.08822359999999985,
+            "count": 1,
+            "self": 0.08822359999999985
+        },
+        "TrainerController.start_learning": {
+            "total": 8.4259068,
+            "count": 1,
+            "self": 0.00016930000000137113,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 7.837200599999999,
+                    "count": 1,
+                    "self": 7.837200599999999
+                },
+                "TrainerController._save_models": {
+                    "total": 0.5885368999999994,
+                    "count": 1,
+                    "self": 0.011001500000000775,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.5775353999999986,
+                            "count": 1,
+                            "self": 0.5775353999999986
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
