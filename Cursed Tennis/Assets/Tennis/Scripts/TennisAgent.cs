@@ -52,6 +52,11 @@ public class TennisAgent : Agent
         m_TextComponent = scoreBoard.GetComponent<Text>();
         SetResetParameters();
     }
+    public void ScorePoint()
+    {
+        score++; // Verhoog de score van de agent
+                 // Voeg hier eventuele andere logica toe die nodig is wanneer een punt wordt gescoord
+    }
 
     public override void OnEpisodeBegin()
     {
