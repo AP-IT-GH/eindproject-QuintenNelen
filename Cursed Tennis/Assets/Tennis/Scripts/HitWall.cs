@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class HitWall : MonoBehaviour
 {
+    public TennisMatchManager matchManager;
+
     public GameObject areaObject;
     public TennisArea m_Area;
     public TennisAgent m_AgentA;
@@ -52,6 +54,11 @@ public class HitWall : MonoBehaviour
         Reset();
     }
 
+    void ScorePoint(TennisAgent agent)
+    {
+        agent.ScorePoint();
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("iWall"))
@@ -61,10 +68,12 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit)
                 {
                     AgentBWins();
+                    matchManager.ScorePoint(false);
                 }
                 else
                 {
                     AgentAWins();
+                    matchManager.ScorePoint(true);
                 }
             }
             else if (col.gameObject.name == "wallB")
@@ -72,10 +81,12 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit)
                 {
                     AgentAWins();
+                    matchManager.ScorePoint(true);
                 }
                 else
                 {
                     AgentBWins();
+                    matchManager.ScorePoint(false);
                 }
             }
             else if (col.gameObject.name == "LeftSideWall" || col.gameObject.name == "RightSideWall")
@@ -83,10 +94,12 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit)
                 {
                     AgentAWins();
+                    matchManager.ScorePoint(true);
                 }
                 else
                 {
                     AgentBWins();
+                    matchManager.ScorePoint(false);
                 }
             }
             else if (col.gameObject.name == "RightSideWall" || col.gameObject.name == "LeftSideWall")
@@ -94,23 +107,24 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit)
                 {
                     AgentBWins();
+                    matchManager.ScorePoint(false);
                 }
                 else
-                {  
+                {
                     AgentAWins();
+                    matchManager.ScorePoint(true);
                 }
             }
             else if (col.gameObject.name == "floorA")
             {
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit || lastFloorHit == FloorHit.Service)
                 {
- 
                     AgentBWins();
+                    matchManager.ScorePoint(false);
                 }
                 else
                 {
                     lastFloorHit = FloorHit.FloorAHit;
-
                     if (!net)
                     {
                         net = true;
@@ -121,13 +135,12 @@ public class HitWall : MonoBehaviour
             {
                 if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit || lastFloorHit == FloorHit.Service)
                 {
-
                     AgentAWins();
+                    matchManager.ScorePoint(true);
                 }
                 else
                 {
                     lastFloorHit = FloorHit.FloorBHit;
-
                     if (!net)
                     {
                         net = true;
@@ -139,20 +152,38 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 0)
                 {
                     AgentBWins();
+                    matchManager.ScorePoint(false);
                 }
                 else if (lastAgentHit == 1)
                 {
                     AgentAWins();
+                    matchManager.ScorePoint(true);
                 }
             }
 
             if (col.gameObject.name == "over" && lastAgentHit == 0)
             {
-                m_AgentA.AddReward(0.2f);
+                if (m_AgentA != null)
+                {
+                    m_AgentA.AddReward(0.2f);
+                    matchManager.ScorePoint(false);
+                }
+                else
+                {
+                    Debug.LogError("Agent A is niet correct toegewezen.");
+                }
             }
             else if (col.gameObject.name == "over" && lastAgentHit == 1)
             {
-                m_AgentB.AddReward(0.2f);
+                if (m_AgentB != null)
+                {
+                    m_AgentB.AddReward(0.2f);
+                    matchManager.ScorePoint(true);
+                }
+                else
+                {
+                    Debug.LogError("Agent B is niet correct toegewezen.");
+                }
             }
         }
     }
@@ -164,13 +195,14 @@ public class HitWall : MonoBehaviour
             if (lastAgentHit == 0)
             {
                 AgentBWins();
+                matchManager.ScorePoint(false);
             }
             else
             {
                 m_AgentA.AddReward(0.1f);
 
                 // Agent A hits the ball successfully
-                //m_AgentA.AddReward(0.3f);
+                // m_AgentA.AddReward(0.3f);
 
                 //agent can return serve in the air
                 if (lastFloorHit != FloorHit.Service && !net)
@@ -187,13 +219,14 @@ public class HitWall : MonoBehaviour
             if (lastAgentHit == 1)
             {
                 AgentAWins();
+                matchManager.ScorePoint(true);
             }
             else
             {
                 m_AgentB.AddReward(0.1f);
 
                 // Agent B hits the ball successfully
-                //m_AgentB.AddReward(0.3f);
+                // m_AgentB.AddReward(0.3f);
 
                 // Rest of the code...
                 if (lastFloorHit != FloorHit.Service && !net)
