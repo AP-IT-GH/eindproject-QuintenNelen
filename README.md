@@ -19,8 +19,9 @@ Hieronder vind je een uitgebreide tutorial waarin stap voor stap wordt uitgelegd
 ### Installatie
 
 Hieronder vind je een oplijsting van welke versies van de software we gebruiken:
- - Unity: versie 2021.3
- - Anaconda (Python): versie 3.9.13
+
+- Unity: versie 2021.3
+- Anaconda (Python): versie 3.9.13
 
 De installaties van deze zaken vind je allemaal goed gedocumenteerd online.
 
@@ -31,11 +32,12 @@ Je begint het spel in het hoofdmenu waar je, in VR uiteraard, enkele opties krij
 ### Beschrijving code
 
 Voor het project te realiseren maken we gebruik van verschillende scriptjes. Hieronder een korte uitleg wat elk script doet:
- - GroundContact.cs: wordt gebruikt op de bal om contact met de grond te detecteren.
- - HitWall.cs: dit script wordt gebruikt om te detecteren of de bal buiten gaat en voor het bepalen van de rewards die de agent krijgt in het algemeen.
- -  TennisAgent.cs: zorgt ervoor dat de tennis agent correct werkt en dat de puntentelling op de juiste manier wordt weergegeven.
- - TennisArea.cs: script om de hele scene deftig op te zetten. Zorgt voor het resetten van de bal onder andere.
- - TennisMatchManager.cs: dit script staat in voor het goed verlopen van een tennismatch, met alle correcte regels.
+
+- GroundContact.cs: wordt gebruikt op de bal om contact met de grond te detecteren.
+- HitWall.cs: dit script wordt gebruikt om te detecteren of de bal buiten gaat en voor het bepalen van de rewards die de agent krijgt in het algemeen.
+- TennisAgent.cs: zorgt ervoor dat de tennis agent correct werkt en dat de puntentelling op de juiste manier wordt weergegeven.
+- TennisArea.cs: script om de hele scene deftig op te zetten. Zorgt voor het resetten van de bal onder andere.
+- TennisMatchManager.cs: dit script staat in voor het goed verlopen van een tennismatch, met alle correcte regels.
 
  Alle scripts zijn te vinden in de repo in de map "Assets/Tennis/scripts"
 
@@ -46,6 +48,10 @@ Voor de agent in orde te krijgen hebben we hem uiteraard veel moeten trainen. Hi
 ### Trainingsresultaten
 
 ### Observaties
+
+De agent krijgt als observaties de positie van de bal mee, zijn eigen positie en positie naar waar de bal moet geschoten worden. Als de bal bij de agent is zal deze de bal terug slaan. 
+
+De agent krijgt een reward als die de bal heeft geraakt of een punt heeft gescoord. De agent krijgt meer reward als hij heeft gescoord dan wanneer hij een bal heeft geraakt. 
 
 ## Conclusie
 
@@ -58,6 +64,7 @@ Zoals hierboven vermeld hebben we een spel gemaakt waarin je een potje tennis sp
 We hebben dit project goed ervaren en hebben er veel uit geleerd. Het trainen van de agent was soms wel een pijnlijk gegeven maar dit is uiteindelijk wel goed gekomen.
 
 ### Lessons learned/verbeteringen
- - De agent lang genoeg laten trainen.
- - Altijd controleren of er wel met de collision boxes ge-collide kan worden.
- - Voldoende observations toevoegen.
+
+- De agent lang genoeg laten trainen.
+- Altijd controleren of er wel met de collision boxes ge-collide kan worden.
+- Voldoende observations toevoegen.
