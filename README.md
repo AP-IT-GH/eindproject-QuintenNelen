@@ -30,7 +30,18 @@ Je begint het spel in het hoofdmenu waar je, in VR uiteraard, enkele opties krij
 
 ### Beschrijving code
 
+Voor het project te realiseren maken we gebruik van verschillende scriptjes. Hieronder een korte uitleg wat elk script doet:
+ - GroundContact.cs: wordt gebruikt op de bal om contact met de grond te detecteren.
+ - HitWall.cs: dit script wordt gebruikt om te detecteren of de bal buiten gaat en voor het bepalen van de rewards die de agent krijgt in het algemeen.
+ -  TennisAgent.cs: zorgt ervoor dat de tennis agent correct werkt en dat de puntentelling op de juiste manier wordt weergegeven.
+ - TennisArea.cs: script om de hele scene deftig op te zetten. Zorgt voor het resetten van de bal onder andere.
+ - TennisMatchManager.cs: dit script staat in voor het goed verlopen van een tennismatch, met alle correcte regels.
+
+ Alle scripts zijn te vinden in de repo in de map "Assets/Tennis/scripts"
+
 ## Resultaten
+
+Voor de agent in orde te krijgen hebben we hem uiteraard veel moeten trainen. Hieronder zal je enkele trainingsresultaten vinden en enkele observaties.
 
 ### Trainingsresultaten
 
@@ -40,6 +51,13 @@ Je begint het spel in het hoofdmenu waar je, in VR uiteraard, enkele opties krij
 
 ### Kort overzicht project
 
+Zoals hierboven vermeld hebben we een spel gemaakt waarin je een potje tennis speelt tegen een getrainde AI agent. Uit de trainingsresultaten kunnen we concluderen dat we de agent zeer lang hebben moeten laten trainen voordat hij deftig kon tennissen. Ook zien we betere resultaten als naargelang er meer observations toegevoegd worden.
+
 ### Ervaringen
 
-### Lessons learned
+We hebben dit project goed ervaren en hebben er veel uit geleerd. Het trainen van de agent was soms wel een pijnlijk gegeven maar dit is uiteindelijk wel goed gekomen.
+
+### Lessons learned/verbeteringen
+ - De agent lang genoeg laten trainen.
+ - Altijd controleren of er wel met de collision boxes ge-collide kan worden.
+ - Voldoende observations toevoegen.

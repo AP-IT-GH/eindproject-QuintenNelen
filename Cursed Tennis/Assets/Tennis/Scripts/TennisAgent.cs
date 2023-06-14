@@ -226,11 +226,11 @@ public class TennisAgent : Agent
         m_TextComponent.text = score.ToString();
     
 
-}
+    }
 
 
 
-public override void Heuristic(in ActionBuffers actionsOut)
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
        var continuousActionsOut = actionsOut.ContinuousActions;
         /*continuousActionsOut[0] = Input.GetAxis("Horizontal");    // Racket Movement
