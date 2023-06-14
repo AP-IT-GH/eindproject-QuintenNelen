@@ -49,9 +49,9 @@ Voor de agent in orde te krijgen hebben we hem uiteraard veel moeten trainen. Hi
 
 ### Observaties
 
-De agent krijgt als observaties de positie van de bal mee, zijn eigen positie en positie naar waar de bal moet geschoten worden. Als de bal bij de agent is zal deze de bal terug slaan. 
+De agent krijgt als observaties de positie van de bal mee, zijn eigen positie en positie naar waar de bal moet geschoten worden. Als de bal bij de agent is zal deze de bal terug slaan.
 
-De agent krijgt een reward als die de bal heeft geraakt of een punt heeft gescoord. De agent krijgt meer reward als hij heeft gescoord dan wanneer hij een bal heeft geraakt. 
+De agent krijgt een reward als die de bal heeft geraakt of een punt heeft gescoord. De agent krijgt meer reward als hij heeft gescoord dan wanneer hij een bal heeft geraakt.
 
 ## Conclusie
 
@@ -68,3 +68,7 @@ We hebben dit project goed ervaren en hebben er veel uit geleerd. Het trainen va
 - De agent lang genoeg laten trainen.
 - Altijd controleren of er wel met de collision boxes ge-collide kan worden.
 - Voldoende observations toevoegen.
+
+## Bronvermelding
+
+Unity-Technologies. (2023).  *GitHub - Unity-Technologies/ml-agents at fix-batch-tennis* . GitHub. https://github.com/Unity-Technologies/ml-agents/tree/fix-batch-tennis
