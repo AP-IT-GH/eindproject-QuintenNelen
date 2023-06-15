@@ -6097,6 +6097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stadium 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4274061793354168235, guid: c2867d99a8de28344bf1335e1d92656a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4535421354969137629, guid: c2867d99a8de28344bf1335e1d92656a, type: 3}
       propertyPath: m_InteractionManager
       value: 
