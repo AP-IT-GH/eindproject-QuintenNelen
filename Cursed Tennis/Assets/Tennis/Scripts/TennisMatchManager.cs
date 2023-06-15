@@ -104,7 +104,7 @@ public class TennisMatchManager : MonoBehaviour
 
         Debug.Log("Previous Game Score: " + FormatScore(prevScorePlayerA) + " - " + FormatScore(prevScorePlayerB));
     }
-
+    //score zoals in het tennis spel
     private string FormatScore(int score)
     {
         if (score == 0)
