@@ -3,10 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Loadtennisscene : MonoBehaviour
 {
-    public string sceneName; // Name of the scene you want to load
+    //public string sceneName; // Name of the scene you want to load
 
     public void LoadScene()
     {
         SceneManager.LoadScene("Test-Jordy");
+        Debug.Log("laad nieuwe scene");
     }
 }
