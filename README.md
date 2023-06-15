@@ -140,3 +140,5 @@ We hebben dit project goed ervaren en hebben er veel uit geleerd. Het trainen va
 ## Bronvermelding
 
 Unity-Technologies. (2023).  *GitHub - Unity-Technologies/ml-agents at fix-batch-tennis* . GitHub. https://github.com/Unity-Technologies/ml-agents/tree/fix-batch-tennis
+
+Gemaakt door Chadley De Weggheleire, Quinten Nelen, Bernd Van Loon en Jordy Van Mol.
