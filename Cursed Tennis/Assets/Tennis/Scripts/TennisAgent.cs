@@ -52,10 +52,11 @@ public class TennisAgent : Agent
         m_TextComponent = scoreBoard.GetComponent<Text>();
         SetResetParameters();
     }
+
     public void ScorePoint()
     {
         score++; // Verhoog de score van de agent
-                 
+
     }
 
     public override void OnEpisodeBegin()
@@ -115,34 +116,35 @@ public class TennisAgent : Agent
 
         sensor.AddObservation(m_InvertMult * gameObject.transform.rotation.z);
         */
-        if (gameObject.name == "AgentB") { 
-        sensor.AddObservation(m_InvertMult * (ball.transform.position.x - myArea.transform.position.x));
-        sensor.AddObservation(m_InvertMult * (gameObject.transform.position.x - myArea.transform.position.x));
-        sensor.AddObservation(m_InvertMult * m_AgentRb.velocity.x);
-        sensor.AddObservation(m_InvertMult * m_BallRb.velocity.x);
+        if (gameObject.name == "AgentB")
+        {
+            sensor.AddObservation(m_InvertMult * (ball.transform.position.x - myArea.transform.position.x));
+            sensor.AddObservation(m_InvertMult * (gameObject.transform.position.x - myArea.transform.position.x));
+            sensor.AddObservation(m_InvertMult * m_AgentRb.velocity.x);
+            sensor.AddObservation(m_InvertMult * m_BallRb.velocity.x);
 
-        sensor.AddObservation(ball.transform.position.y - myArea.transform.position.y);
-        sensor.AddObservation(gameObject.transform.position.y - myArea.transform.position.y);
-        sensor.AddObservation(m_AgentRb.velocity.y);
-        sensor.AddObservation(m_BallRb.velocity.y);
+            sensor.AddObservation(ball.transform.position.y - myArea.transform.position.y);
+            sensor.AddObservation(gameObject.transform.position.y - myArea.transform.position.y);
+            sensor.AddObservation(m_AgentRb.velocity.y);
+            sensor.AddObservation(m_BallRb.velocity.y);
 
-        sensor.AddObservation(m_InvertMult * (ball.transform.position.z - myArea.transform.position.z));
-        sensor.AddObservation(m_InvertMult * (gameObject.transform.position.z - myArea.transform.position.z));
-        sensor.AddObservation(m_InvertMult * m_AgentRb.velocity.z);
-        sensor.AddObservation(m_InvertMult * m_BallRb.velocity.z);
+            sensor.AddObservation(m_InvertMult * (ball.transform.position.z - myArea.transform.position.z));
+            sensor.AddObservation(m_InvertMult * (gameObject.transform.position.z - myArea.transform.position.z));
+            sensor.AddObservation(m_InvertMult * m_AgentRb.velocity.z);
+            sensor.AddObservation(m_InvertMult * m_BallRb.velocity.z);
 
-        sensor.AddObservation(m_InvertMult * (gameObject.transform.position - myArea.transform.position)); // Agent's position relative to myArea
-        sensor.AddObservation(m_InvertMult * (ball.transform.position - myArea.transform.position)); // Ball's position relative to myArea
+            sensor.AddObservation(m_InvertMult * (gameObject.transform.position - myArea.transform.position)); // Agent's position relative to myArea
+            sensor.AddObservation(m_InvertMult * (ball.transform.position - myArea.transform.position)); // Ball's position relative to myArea
 
-        Vector3 targetPosition = targetPrefab.transform.position;
-        sensor.AddObservation(targetPosition.x - myArea.transform.position.x);
-        sensor.AddObservation(targetPosition.y - myArea.transform.position.y);
-        sensor.AddObservation(targetPosition.z - myArea.transform.position.z);
+            Vector3 targetPosition = targetPrefab.transform.position;
+            sensor.AddObservation(targetPosition.x - myArea.transform.position.x);
+            sensor.AddObservation(targetPosition.y - myArea.transform.position.y);
+            sensor.AddObservation(targetPosition.z - myArea.transform.position.z);
 
-        Vector3 netpos = net.transform.position;
-        sensor.AddObservation(netpos.x - myArea.transform.position.x);
-        sensor.AddObservation(netpos.y - myArea.transform.position.y);
-        sensor.AddObservation(netpos.z - myArea.transform.position.z);
+            Vector3 netpos = net.transform.position;
+            sensor.AddObservation(netpos.x - myArea.transform.position.x);
+            sensor.AddObservation(netpos.y - myArea.transform.position.y);
+            sensor.AddObservation(netpos.z - myArea.transform.position.z);
         }
 
 
@@ -230,7 +232,7 @@ public class TennisAgent : Agent
             }
         }
         m_TextComponent.text = score.ToString();
-    
+
 
     }
 
@@ -238,7 +240,7 @@ public class TennisAgent : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-       var continuousActionsOut = actionsOut.ContinuousActions;
+        var continuousActionsOut = actionsOut.ContinuousActions;
         /*continuousActionsOut[0] = Input.GetAxis("Horizontal");    // Racket Movement
        continuousActionsOut[1] = Input.GetKey(KeyCode.Space) ? 1f : 0f;   // Racket Jumping
        continuousActionsOut[2] = Input.GetAxis("Vertical");   // Racket Rotation

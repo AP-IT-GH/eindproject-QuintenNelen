@@ -10,4 +10,10 @@ public class Loadtennisscene : MonoBehaviour
         SceneManager.LoadScene("Test-Jordy");
         Debug.Log("laad nieuwe scene");
     }
-}
+
+    public void Quitgame()
+        {
+        Application.Quit();
+        Debug.Log("quit game");
+        }
+    }
