@@ -51,7 +51,7 @@ conda activate env_name
 pip3 install torch~=1.7.1 -f https://download.pytorch.org/whl/torch_stable.html
 python -m pip install mlagents==0.30.0
 ```
-3. Navigeer vervolgens vanuit Anaconda naar de map waar de "mlagents-learn" executable staat en voer het volgende commando uit voor de training te laten starten (Vervang `path/to/config.yaml` door het pad naar de YAML-configuratie van de Unity environment en `name_of_run` door de naam van de run):
+3. Navigeer vervolgens vanuit Anaconda naar de map waar de "mlagents-learn" executable staat. Binnen het project wordt er gebruikt gemaakt van Self play om de agent makkelijk en zelfstandig te laten trainen. We hebben het trainen ook geprobeerd met Imitation learning en een camera voor observations maar dit hebben we uit het finale resultaat gelaten. Voer het volgende commando uit voor de training te laten starten (Vervang `path/to/config.yaml` door het pad naar de YAML-configuratie van de Unity environment en `name_of_run` door de naam van de run):
 ```
 mlagents-learn path/to/config.yaml --run-id=name_of_run
 ```
@@ -93,8 +93,6 @@ De agent krijgt als observaties de positie van de bal mee, zijn eigen positie en
 
 De agent krijgt een reward als die de bal heeft geraakt of een punt heeft gescoord. De agent krijgt meer reward als hij heeft gescoord dan wanneer hij een bal heeft geraakt.
 
-### Waarnemingen
-
 ## Conclusie
 
 Hieronder een conclusie van wat we hebben gedaan en geleerd door het maken van dit project.
@@ -112,6 +110,8 @@ We hebben dit project goed ervaren en hebben er veel uit geleerd. Het trainen va
 - De agent lang genoeg laten trainen.
 - Altijd controleren of er wel met de collision boxes ge-collide kan worden.
 - Voldoende observations toevoegen.
+- Door dit project hebben we met Self play & Imitation learning leren werken.
+- We hebben binnen het project ook gewerkt met een camera in plaats van rays, dus dit is ook iets nieuws dat we hebben bijgeleerd.
 
 ## Bronvermelding
 
