@@ -89,7 +89,7 @@ public class HitWall : MonoBehaviour
                     matchManager.ScorePoint(false);
                 }
             }
-            else if (col.gameObject.name == "LeftSideWall" || col.gameObject.name == "RightSideWall")
+            else if (col.gameObject.name == "LeftSideWall" || col.gameObject.name == "RigthSideWall")
             {
                 if (lastAgentHit == 1 || lastFloorHit == FloorHit.FloorBHit)
                 {
@@ -102,7 +102,7 @@ public class HitWall : MonoBehaviour
                     matchManager.ScorePoint(false);
                 }
             }
-            else if (col.gameObject.name == "RightSideWall" || col.gameObject.name == "LeftSideWall")
+            else if (col.gameObject.name == "RigthSideWall" || col.gameObject.name == "LeftSideWall")
             {
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit)
                 {
