@@ -58,7 +58,7 @@ pip3 install torch~=1.7.1 -f https://download.pytorch.org/whl/torch_stable.html
 python -m pip install mlagents==0.30.0
 ```
 
-3. Navigeer vervolgens vanuit Anaconda naar de map waar de "mlagents-learn" executable staat en voer het volgende commando uit voor de training te laten starten (Vervang `path/to/config.yaml` door het pad naar de YAML-configuratie van de Unity environment en `name_of_run` door de naam van de run):
+3. Navigeer vervolgens vanuit Anaconda naar de map waar de "mlagents-learn" executable staat. Binnen dit project maken we gebruik van Self play. We hebben ook geprobeerd met Imitation learning en een camera voor observations proberen werken maar dit zit niet in het finale resultaat. Voer het volgende commando uit voor de training te laten starten (Vervang `path/to/config.yaml` door het pad naar de YAML-configuratie van de Unity environment en `name_of_run` door de naam van de run):
 
 ```
 mlagents-learn path/to/config.yaml --run-id=name_of_run
@@ -99,7 +99,7 @@ Voor de agent in orde te krijgen hebben we hem uiteraard veel moeten trainen. Hi
 
 ### Trainingsresultaten
 
-In het begin van het trainen, trainende Agent A en B een grote tijd apart. Agent B heeft een langere tijd gekregen om te trainen en haalde betere resultaten. Hierdoor werd Agent B beter. Agent A haalde integenstelling minder goede resultaten en leerde minder goed bij. Het gevolg hiervan is dat Agent B alleen maar beter werd, maar niet leerde samenspelen. Hij leerde alleen maar om Agent A te verslaan.
+In het begin van het trainen, trainde Agent A en B een grote tijd apart. Agent B heeft een langere tijd gekregen om te trainen en haalde betere resultaten. Hierdoor werd Agent B beter. Agent A haalde in tegenstelling minder goede resultaten en leerde minder goed bij. Het gevolg hiervan is dat Agent B alleen maar beter werd, maar niet leerde samenspelen. Hij leerde alleen maar om Agent A te verslaan.
 
 We zien bij de tweede run dat de rewards lager liggen maar constanter is (minder pieken). Dit resulteert er in dat ze beter op elkaar zijn afgestemd en beter tegen elkaar kunnen spelen.
 
@@ -134,6 +134,8 @@ We hebben dit project goed ervaren en hebben er veel uit geleerd. Het trainen va
 - De agent lang genoeg laten trainen.
 - Altijd controleren of er wel met de collision boxes ge-collide kan worden.
 - Voldoende observations toevoegen.
+- Self play is een handig gegeven zodat de agent makkelijk en zelfstandig kan werken.
+- Imitation learning & cameras voor observations.
 
 ## Bronvermelding
 
