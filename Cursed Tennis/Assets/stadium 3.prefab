@@ -3214,7 +3214,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.754717, g: 0.14524738, b: 0.754717, a: 1}
   m_Intensity: 1
-  m_Range: 60.68516
+  m_Range: 77.308334
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3367,7 +3367,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2

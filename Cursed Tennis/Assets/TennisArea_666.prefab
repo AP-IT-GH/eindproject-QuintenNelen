@@ -1447,6 +1447,8 @@ GameObject:
   - component: {fileID: 532348594269306949}
   - component: {fileID: 8069715018168220382}
   - component: {fileID: 3079044753062333264}
+  - component: {fileID: 7012270655141646997}
+  - component: {fileID: 5704631599098494883}
   m_Layer: 0
   m_Name: net
   m_TagString: iWall
@@ -1572,6 +1574,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4227, y: 50, z: 2421}
   m_Center: {x: -6.617445e-24, y: 2129, z: -0.000000007450581}
+--- !u!65 &7012270655141646997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313704064462085058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 124.3, y: 50, z: 1118.8}
+  m_Center: {x: 1188.1, y: 5, z: 0.0008322969}
+--- !u!65 &5704631599098494883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313704064462085058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 124.3, y: 50, z: 1118.8}
+  m_Center: {x: -1164, y: 5, z: 0.0008322969}
 --- !u!1 &5313739501352144650
 GameObject:
   m_ObjectHideFlags: 0
