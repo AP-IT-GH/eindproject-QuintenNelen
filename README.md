@@ -19,11 +19,51 @@ Hieronder vind je een uitgebreide tutorial waarin stap voor stap wordt uitgelegd
 ### Installatie
 
 Hieronder vind je een oplijsting van welke versies van de software we gebruiken:
-
-- Unity: versie 2021.3
-- Anaconda (Python): versie 3.9.13
+ - Unity: versie 2021.3
+ - Anaconda (Python): versie 3.9.13
 
 De installaties van deze zaken vind je allemaal goed gedocumenteerd online.
+
+### Opzetten omgeving
+
+Hieronder een beknopte uitleg over hoe je de omgeving kan implementeren en de agent vervolgens kan trainen.
+
+1. Je begint met het pullen de Github repo op je eigen omgeving. Dit kan met behulp van Github Desktop of andere Git GUI tools of met behulp van het volgende commando: 
+```
+git clone https://github.com/AP-IT-GH/eindproject-QuintenNelen.git
+```
+2. Vervolgens open je de Untiy hub en klik je op "Open project". Je navigeert vervolgens naar de map waarin je de repo gepulled hebt en je kiest de repo als project. Nu zou je zonder problemen het project op moeten kunnen starten.
+3. Vanuit het projectvenster van Unity navigeer je binnen de mappenstructuur naar de map "/Assets/Tennis/Scenes" en open je de tennis scene. Met behulp van deze scene kan je de agent gaan trainen. Deze scene is gemaakt om de agent te trainen met behulp van self play, waarin er 2 agents het tegen elkaar opnemen in een potje tennis.
+
+Met dit achter de rug kan je dus nu aan het trainen beginnen.
+
+### Trainen agent
+
+In dit stappenplan wordt beknopt uitgelegd hoe je de agent kan trainen met behulp van Anaconda, ervan uitgaande dat je Anaconda hebt geïnstalleerd.
+
+1. Maak een nieuwe conda environment met behulp van de volgende commando's:
+```
+conda create --name env_name
+conda activate env_name
+```
+2. Installeer de benodigde packages om het trainen te laten werken. Hiervoor voer je de volgende commando's in:
+```
+pip3 install torch~=1.7.1 -f https://download.pytorch.org/whl/torch_stable.html
+python -m pip install mlagents==0.30.0
+```
+3. Navigeer vervolgens vanuit Anaconda naar de map waar de "mlagents-learn" executable staat en voer het volgende commando uit voor de training te laten starten (Vervang `path/to/config.yaml` door het pad naar de YAML-configuratie van de Unity environment en `name_of_run` door de naam van de run):
+```
+mlagents-learn path/to/config.yaml --run-id=name_of_run
+```
+4. Je kan nadien op TensorBoard je resultaten gaan bekijken. Om TensorBoard te starten moet je het volgende commando uitvoeren (Vervang `path/to/runs` door het pad naar de map waarin de training runs worden opgeslagen.):
+```
+tensorboard --logdir=path/to/runs
+```
+5. De training wordt stop gezet als deze voltooid is of als je op `Ctrl+C` drukt.
+6. Deactiveer de conda environment met het volgende commando:
+```
+conda deactivate
+```
 
 ### Verloop spel
 
@@ -43,7 +83,7 @@ Voor het project te realiseren maken we gebruik van verschillende scriptjes. Hie
 
 ## Resultaten
 
-Voor de agent in orde te krijgen hebben we hem uiteraard veel moeten trainen. Hieronder zal je enkele trainingsresultaten vinden en enkele observaties.
+Voor de agent in orde te krijgen hebben we hem uiteraard veel moeten trainen. Hieronder zal je enkele trainingsresultaten vinden en enkele observaties en waarnemingen tijdens het trainen.
 
 ### Trainingsresultaten
 
@@ -53,7 +93,11 @@ De agent krijgt als observaties de positie van de bal mee, zijn eigen positie en
 
 De agent krijgt een reward als die de bal heeft geraakt of een punt heeft gescoord. De agent krijgt meer reward als hij heeft gescoord dan wanneer hij een bal heeft geraakt.
 
+### Waarnemingen
+
 ## Conclusie
+
+Hieronder een conclusie van wat we hebben gedaan en geleerd door het maken van dit project.
 
 ### Kort overzicht project
 
