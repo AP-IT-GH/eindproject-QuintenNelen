@@ -58,14 +58,9 @@ public class TennisMatchManager : MonoBehaviour
             ResetGame();
         }
 
-        if (setsPlayerA >= 6)
+        if (setsPlayerA >= gamesToWinSet || setsPlayerB >= gamesToWinSet)
         {
-            // Player A wins the match
-            ResetMatch();
-        }
-        else if (setsPlayerB >= 6)
-        {
-            // Player B wins the match
+            // Either Player A or Player B wins the match
             ResetMatch();
         }
 
@@ -89,8 +84,6 @@ public class TennisMatchManager : MonoBehaviour
         setsPlayerB = 0;
     }
 
-    // Rest van de code blijft hetzelfde
-
     private void UpdateUI()
     {
         scorePlayerAText.text = FormatScore(scorePlayerA);
@@ -104,7 +97,7 @@ public class TennisMatchManager : MonoBehaviour
 
         Debug.Log("Previous Game Score: " + FormatScore(prevScorePlayerA) + " - " + FormatScore(prevScorePlayerB));
     }
-    //score zoals in het tennis spel
+
     private string FormatScore(int score)
     {
         if (score == 0)

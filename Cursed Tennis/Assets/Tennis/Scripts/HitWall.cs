@@ -68,7 +68,7 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit)
                 {
                     AgentBWins();
-                    matchManager.ScorePoint(false);
+                    matchManager.ScorePoint(true);
                 }
                 else
                 {
@@ -86,7 +86,7 @@ public class HitWall : MonoBehaviour
                 else
                 {
                     AgentBWins();
-                    matchManager.ScorePoint(false);
+                    matchManager.ScorePoint(true);
                 }
             }
             else if (col.gameObject.name == "LeftSideWall" || col.gameObject.name == "RigthSideWall")
@@ -99,7 +99,7 @@ public class HitWall : MonoBehaviour
                 else
                 {
                     AgentBWins();
-                    matchManager.ScorePoint(false);
+                    matchManager.ScorePoint(true);
                 }
             }
             else if (col.gameObject.name == "RigthSideWall" || col.gameObject.name == "LeftSideWall")
@@ -107,7 +107,7 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit)
                 {
                     AgentBWins();
-                    matchManager.ScorePoint(false);
+                    matchManager.ScorePoint(true);
                 }
                 else
                 {
@@ -120,7 +120,7 @@ public class HitWall : MonoBehaviour
                 if (lastAgentHit == 0 || lastFloorHit == FloorHit.FloorAHit || lastFloorHit == FloorHit.Service)
                 {
                     AgentBWins();
-                    matchManager.ScorePoint(false);
+                    matchManager.ScorePoint(true);
                 }
                 else
                 {
@@ -157,7 +157,7 @@ public class HitWall : MonoBehaviour
                 else if (lastAgentHit == 1)
                 {
                     AgentAWins();
-                    matchManager.ScorePoint(true);
+                    matchManager.ScorePoint(false);
                 }
             }
 
@@ -178,7 +178,7 @@ public class HitWall : MonoBehaviour
                 if (m_AgentB != null)
                 {
                     m_AgentB.AddReward(0.2f);
-                    matchManager.ScorePoint(true);
+                    matchManager.ScorePoint(false);
                 }
                 else
                 {
@@ -219,7 +219,7 @@ public class HitWall : MonoBehaviour
             if (lastAgentHit == 1)
             {
                 AgentAWins();
-                matchManager.ScorePoint(true);
+                matchManager.ScorePoint(false);
             }
             else
             {
